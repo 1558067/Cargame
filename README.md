@@ -1,5 +1,5 @@
 # Cargame
-HTML、CSS、JavaScriptで作成した車ゲーム
+JavaScriptで作成した車ゲーム
 
 # DEMO
  ![demo](https://github.com/1558067/Cargame/blob/main/demo.gif)
