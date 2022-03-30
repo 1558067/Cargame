@@ -1,6 +1,7 @@
 'use strict';
 let score = 0;
-let time = 0;
+const startTime = Date.now();
+let nowTime = 0;
 
 function drawScore() {
     ctx.font = "20px Arial";
@@ -9,7 +10,8 @@ function drawScore() {
 }
 
 function drawTime() {
+    nowTime = (Date.now() - startTime) / 1000;
     ctx.font = "20px Arial";
     ctx.fillStyle = "black";
-    ctx.fillText("プレイ時間: " + Math.round(time) + " 秒", 10, 50);
+    ctx.fillText("プレイ時間: " + Math.round(nowTime) + " 秒", 10, 50);
 }

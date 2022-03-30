@@ -1,19 +1,20 @@
 'use strict';
 let carspeed = 0;
+const carspeedParameter = 15;
 let p1 = 0;
 let p2 = 0;
 let temp = 0;
 let grounded = 0;
-let size = 30;
-let objectheight = 100;
-let objectwidth = 60;
+const size = 30;
+const objectheight = 100;
+const objectwidth = 60;
 let playing = true;
 let angle = 0;
 let key = {
   x: 0,
   z: 0,
   ArrowLeft: 0,
-  ArrowRight: 0
+  ArrowRight: 0,
 };
 //キー操作
 onkeydown = d => key[d.key] = 1;
@@ -39,7 +40,7 @@ function main() {
   if (grounded && playing) {
     temp -= (temp - (key.x - key.z)) * 0.05;
   }
-  carspeed += 10 * temp;
+  carspeed += carspeedParameter * temp;
 
   //地面をアニメーション
   for (let i = 0; i < canvas.width; i++) {
@@ -58,7 +59,6 @@ function main() {
     requestAnimationFrame(main);
     //スコアと時間を更新
     score += temp * 0.1;
-    time += 0.01;
   } else {
     //ゲームオーバーの処理
     let reset = window.confirm("GameOver！記録は " + Math.round(score) + "m でした。" + "もう一度遊びますか？");
@@ -67,4 +67,6 @@ function main() {
     }
   }
   player1.play();
+  drawScore();
+  drawTime();
 }
