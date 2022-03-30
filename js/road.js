@@ -2,9 +2,7 @@
 let perm = [];
 let value = 0;
 /*
-　道の凸凹を作成する。パーリンノイズを使用する。
   参考
-
   ・空文について
   空文 - JavaScript | MDN
   https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/Empty
@@ -24,10 +22,10 @@ while (perm.length < 255) {
   while (perm.includes(value = Math.floor(Math.random() * 255)));
   perm.push(value);
 }
-//線形補間を行う。
-let lerp = (a, b, t) => a + (b - a) * (1 - Math.cos(t * Math.PI)) / 2;
-
+//　道の凸凹を作成する。パーリンノイズを使用する。
 function road(x) {
+  //線形補間を行う。
+  let lerp = (a, b, t) => a + (b - a) * (1 - Math.cos(t * Math.PI)) / 2;
   x = x * 0.01 % 255;
   return lerp(perm[Math.floor(x)], perm[Math.ceil(x)], x - Math.floor(x));
 }
