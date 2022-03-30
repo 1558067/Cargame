@@ -39,7 +39,7 @@ function main() {
   if (grounded && playing) {
     temp -= (temp - (key.x - key.z)) * 0.05;
   }
-  carspeed += 5 * temp;
+  carspeed += 10 * temp;
 
   //地面をアニメーション
   for (let i = 0; i < canvas.width; i++) {
