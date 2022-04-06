@@ -12,7 +12,7 @@ JavaScriptで作成した車ゲーム
  
 # Note
 こちらを参考にしました↓  
-https://www.youtube.com/watch?v=B1iabPM69vM&t=753s
+https://www.youtube.com/watch?v=B1iabPM69vM
  
 # Author
 * 1558067
